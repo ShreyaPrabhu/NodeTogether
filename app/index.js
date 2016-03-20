@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var motivations = require('motivations');
-
+var pickone = require('pick-one');
 
 app.get('/', function(request, response){
 	
@@ -15,6 +15,6 @@ app.get('/Hello', function(request, response){
 
 app.get('/Mot',function(request, response){
 	
-	response.send(motivations[6]);
+	response.send(pickone(motivations));
 });
 module.exports = app;
